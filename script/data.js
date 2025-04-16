@@ -29,7 +29,9 @@ const map = [
     {
         block: 2.3,
         typ: 2,
-        doors: { 2: 1.3, 4: 3.3}
+        doors: { 2: 1.3, 4: 3.3},
+        object: 1,
+        objectLocation: 1
     },
 
 
@@ -44,7 +46,9 @@ const map = [
     {
         block: 3.2,
         typ: 2,
-        doors: { 1: 3.1, 3: 3.3}
+        doors: { 1: 3.1, 3: 3.3},
+        object: 1,
+        objectLocation: 2
     },
     
     {
@@ -103,13 +107,17 @@ const map = [
     {
         block: 5.2,
         typ: 2,
-        doors: { 1: 5.1,  3: 5.3}
+        doors: { 1: 5.1,  3: 5.3},
+        object: 1,
+        objectLocation: 4
     },
     
     {
         block: 5.3,
         typ: 2,
-        doors: { 1: 5.2, 3: 5.4}
+        doors: { 1: 5.2, 3: 5.4},
+        object: 1,
+        objectLocation: 2
     },
     
     {
@@ -121,7 +129,9 @@ const map = [
     {
         block: 5.12,
         typ: 2,
-        doors: { 2: 4.12, 4: 6.12}
+        doors: { 2: 4.12, 4: 6.12},
+        object: 1,
+        objectLocation: 1
     },
 
     
@@ -172,7 +182,9 @@ const map = [
     {
         block: 7.2,
         typ: 2,
-        doors: { 1: 7.1, 3: 7.3 }
+        doors: { 1: 7.1, 3: 7.3 },
+        object: 1,
+        objectLocation: 4
     },    
 
     {
@@ -184,7 +196,9 @@ const map = [
     {
         block: 7.4,
         typ: 2,
-        doors: { 1: 7.3, 2: 6.4}
+        doors: { 1: 7.3, 2: 6.4},
+        object: 1,
+        objectLocation: 4
     },    
 
     {
@@ -218,7 +232,9 @@ const map = [
     {
         block: 7.11,
         typ: 2,
-        doors: { 1: 7.9,  3: 7.12  }
+        doors: { 1: 7.9,  3: 7.12  },
+        object: 1,
+        objectLocation: 2
     },    
 
     {
@@ -284,7 +300,9 @@ const map = [
     {
         block: 9.11,
         typ: 2,
-        doors: { 1: 9.9, 3: 9.12 }
+        doors: { 1: 9.9, 3: 9.12 },
+        object: 1,
+        objectLocation: 4
     },    
 
     {
@@ -401,19 +419,26 @@ const map = [
     {
         block: 13.3,
         typ: 2,
-        doors: { 1: 13.2 , 4: 14.3  }
+        doors: { 1: 13.2 , 4: 14.3  },
+        object: 1,
+        objectLocation: 3
     },     
     
     {
         block: 13.6,
         typ: 2,
-        doors: { 2: 12.6, 4: 14.6  }
+        doors: { 2: 12.6, 4: 14.6  },
+        object: 1,
+        objectLocation: 1
     },     
     
     {
         block: 13.9,
         typ: 2,
         doors: {  2: 12.9 , 4: 14.9  }
+        ,
+        object: 1,
+        objectLocation: 3
     }, 
 
         
@@ -450,7 +475,9 @@ const map = [
     {
         block: 15.4,
         typ: 2,
-        doors: { 1: 15.3, 3: 15.5  }
+        doors: { 1: 15.3, 3: 15.5  },
+        object: 1,
+        objectLocation: 2
     }, 
 
             
@@ -458,7 +485,9 @@ const map = [
     {
         block: 15.5,
         typ: 2,
-        doors: { 1: 15.4, 3: 15.6  }
+        doors: { 1: 15.4, 3: 15.6  },
+        object: 1,
+        objectLocation: 4
     }, 
 
             
@@ -495,7 +524,9 @@ const map = [
     {
         block: 15.12,
         typ: 2,
-        doors: { 1: 15.11 , 3: 15.13   }
+        doors: { 1: 15.11 , 3: 15.13   },
+        object: 1,
+        objectLocation: 4
     }, 
 
             
@@ -547,7 +578,9 @@ const map = [
     {
         block: 17.4,
         typ: 2,
-        doors: { 1: 17.3, 3: 17.5   }
+        doors: { 1: 17.3, 3: 17.5 },
+        object: 1,
+        objectLocation: 4
     }, 
     
     
@@ -592,17 +625,20 @@ const map = [
     },     
     
 
-
     {
         block: 18.3,
         typ: 2,
-        doors: { 2: 17.3, 4: 19.3  }
+        doors: { 2: 17.3, 4: 19.3  },
+        object: 1,
+        objectLocation: 3
     }, 
 
     {
         block: 18.5,
         typ: 2,
-        doors: {  2: 17.5 ,  4: 19.5  }
+        doors: {  2: 17.5 ,  4: 19.5  },
+        object: 1,
+        objectLocation: 1
     }, 
 
     {
@@ -630,7 +666,7 @@ const map = [
         typ: 2,
         doors: { 1: 19.3, 3: 19.5   },
         object: 1,
-        objectLocation: 4
+        objectLocation: 2
     }, 
     
     {
@@ -642,7 +678,9 @@ const map = [
     {
         block: 19.7,
         typ: 2,
-        doors: { 2: 18.7, 3: 19.8  }
+        doors: { 2: 18.7, 3: 19.8  },
+        object: 1,
+        objectLocation: 1
     }, 
     
     {
@@ -668,23 +706,19 @@ const map = [
     {
         block: 19.12,
         typ: 2,
-        doors: { 1: 19.11,  4: 20.12  }
+        doors: { 1: 19.11,  4: 20.12  },
+        object: 1,
+        objectLocation: 3
     }, 
     
     
     {
         block: 20.12,
         typ: 1,
-        doors: { 2: 19.12 }
+        doors: { 2: 19.12 },
+        object: 1,
+        objectLocation: 4
     }, 
-
-
-
-    
-
-    
-
-
 ]
 
 

@@ -10,12 +10,12 @@
 
 <body>
     <header>
-        <h1>Labrinth</h1>
+        <h1>Labyrint</h1>
 
     </header>
 
     <main>
-        <div id="gameView">
+        <div id="gameView" >
             <img id="mianPlayView" src="images/main.png" width="800px">
             <div id="doorleft"><img src="images/doorleft.png"></div>
             <div id="doorright"><img src="images/doorright.png"></div>
@@ -45,10 +45,21 @@
                 <img id="object12" src="images/icon/12.png" class="hidden">
                 <img id="object13" src="images/icon/key.png" class="hidden">
                 <img id="object14" src="images/icon/lock.png" class="hidden">
-
             </div>
 
         </div>
+
+        <div id="gameover"  class="fixed hidden">
+
+            <img id="gameoverlog" src="images/gameover.jpg" >
+            <button id="restart" onclick="location.reload()" >Try again</button>
+        </div>
+
+        <div id="WIN" class="fixed hidden">
+            <img id="gameoverlog" src="images/win.gif" >
+        </div>
+
+
     </main>
     <script type="module" src="script/main.js"></script>
 </body>

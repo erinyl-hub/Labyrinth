@@ -182,9 +182,29 @@ header {
     font-family: Georgia, 'Times New Roman', Times, serif
   }
 
-  #start{
+  #restart{
+    position: absolute;
+    top: 550px;
+    left: 290px;
+    width: 100px;
+    height: 40px;
+    background-color: gray;
+
+  }
+  
+  .fixed{
+    position: relative;
+    border: 5px;
+    justify-content: center;
+    align-items: center;
+    border: 5px;
+    background-color: darkgray;
+    border-color: blanchedalmond;
+    padding: 5px;
     
   }
+
+
 
 
 

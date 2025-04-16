@@ -23,6 +23,8 @@ let url = "https://api.api-ninjas.com/v1/advice?X-Api-Key=1DLuYMGAVEIYGLVmQ8iClw
 
 const footsteps = new Audio('audio/footsteps.wav');
 const backsound = new Audio("audio/backsound.wav");
+const monsterRoare1 = new Audio('audio/roar1.wav');
+const monsterRoare2 = new Audio('audio/roar2.wav');
 
 const pickup = new Audio('audio/pickup.wav');
 backsound.loop = true;
@@ -36,7 +38,7 @@ window.onload = () => {
     document.getElementById('arrowrightbutton').addEventListener('click', () => Move(4));
     document.getElementById('object13').addEventListener('click', () => GetKey());
     document.getElementById('object14').addEventListener('click', () => Win());
-    
+
 };
 
 
@@ -66,9 +68,8 @@ function Move(doorChosen) {
     MonsterMovment();
     MonsterDirect();
 
-    if(monsterBlock.block === currentBlock.block)
-    {
-        GameOver();
+    if (monsterBlock.block === currentBlock.block) {
+        //GameOver();
     }
 
     console.log("D")
@@ -377,11 +378,11 @@ function MonsterDirect() {
 
 function checkDirect(DirectionToCheck, Times, blockStart, monsterDistance, test) {
     let allblocks = [];
-  
-    if(blockStart === null){return;}
-    
+
+    if (blockStart === null) { return; }
+
     let door = blockStart.doors?.[DirectionToCheck];
-    if (!door) {return;}
+    if (!door) { return; }
 
     for (let i = 1; i <= Times; i++) {
         monsterDistance++;
@@ -389,17 +390,16 @@ function checkDirect(DirectionToCheck, Times, blockStart, monsterDistance, test)
 
         //console.log("Room: " + door.toString() + "  Monster: " + monsterBlock.block.toString())
 
-        if(door.toString() === monsterBlock.block.toString())
-            {
-                MonsterSound(monsterDistance)
-                
-            }
+        if (door.toString() === monsterBlock.block.toString()) {
+            MonsterSound(monsterDistance)
+
+        }
 
         let blockT = map.find(o => o.block === door);
-        if (!blockT || !blockT.doors || !blockT.doors[DirectionToCheck]) {           
-            break;          
+        if (!blockT || !blockT.doors || !blockT.doors[DirectionToCheck]) {
+            break;
         }
-  
+
         door = blockT.doors[DirectionToCheck];
     }
 
@@ -445,71 +445,67 @@ function checkAll(start) {
             break;
     }
 
-    let A = checkDirect(St, 4, currentBlock,0, "A")
-    
-    let B = checkDirect(Rg, 3, CheckBlock(A,0),1, "B") 
-    let C = checkDirect(St, 2, CheckBlock(B,0),2, "C") 
-    let D = checkDirect(Rg, 1, CheckBlock(C,0),3, "D")
-    let E = checkDirect(St, 1, CheckBlock(B,1),3, "E") 
-    let F = checkDirect(Bk, 1, CheckBlock(B,1),3, "F")
-    let G = checkDirect(Rg, 2, CheckBlock(A,1),2, "G")
-    let H = checkDirect(Rg, 1, CheckBlock(A,2),3, "H") 
-    let P = checkDirect(St, 1, CheckBlock(G,0),3, "P")
+    let A = checkDirect(St, 4, currentBlock, 0, "A")
 
-    let I = checkDirect(Lf, 3, CheckBlock(A,0),1, "I")
-    let J = checkDirect(St, 2, CheckBlock(I,0),2, "J") 
-    let K = checkDirect(Lf, 1, CheckBlock(J,0),3, "K")
-    let L = checkDirect(St, 1, CheckBlock(I,1),3, "L")
-    let M = checkDirect(Bk, 1, CheckBlock(I,1),3, "M")
-    let N = checkDirect(Lf, 2, CheckBlock(A,1),2, "N") 
-    let O = checkDirect(Lf, 1, CheckBlock(A,2),3, "O")
-    let Q = checkDirect(St, 1, CheckBlock(N,0),3, "Q")
+    let B = checkDirect(Rg, 3, CheckBlock(A, 0), 1, "B")
+    let C = checkDirect(St, 2, CheckBlock(B, 0), 2, "C")
+    let D = checkDirect(Rg, 1, CheckBlock(C, 0), 3, "D")
+    let E = checkDirect(St, 1, CheckBlock(B, 1), 3, "E")
+    let F = checkDirect(Bk, 1, CheckBlock(B, 1), 3, "F")
+    let G = checkDirect(Rg, 2, CheckBlock(A, 1), 2, "G")
+    let H = checkDirect(Rg, 1, CheckBlock(A, 2), 3, "H")
+    let P = checkDirect(St, 1, CheckBlock(G, 0), 3, "P")
+
+    let I = checkDirect(Lf, 3, CheckBlock(A, 0), 1, "I")
+    let J = checkDirect(St, 2, CheckBlock(I, 0), 2, "J")
+    let K = checkDirect(Lf, 1, CheckBlock(J, 0), 3, "K")
+    let L = checkDirect(St, 1, CheckBlock(I, 1), 3, "L")
+    let M = checkDirect(Bk, 1, CheckBlock(I, 1), 3, "M")
+    let N = checkDirect(Lf, 2, CheckBlock(A, 1), 2, "N")
+    let O = checkDirect(Lf, 1, CheckBlock(A, 2), 3, "O")
+    let Q = checkDirect(St, 1, CheckBlock(N, 0), 3, "Q")
 }
 
-function CheckBlock(blocket,index)
-{
-    if (!blocket) {return null;}
-    if (!blocket[index]) {return null;}
+function CheckBlock(blocket, index) {
+    if (!blocket) { return null; }
+    if (!blocket[index]) { return null; }
     return map.find(o => o.block === blocket[index])
 }
 
-function MonsterSound(dist)
-{
-    
+function MonsterSound(dist) {
+
 
     console.warn("CASE:  " + dist)
-    switch(dist)
-    {   
-        case 2:     
-        const monsterRoare2 = new Audio('audio/roar2.wav');
-        monsterRoare2.play();
-        break;
+    switch (dist) {
+        case 2:
+            monsterRoare2.play();
+            break;
 
-        case 4:       
-        const monsterRoare1 = new Audio('audio/roar1.wav');
-        monsterRoare1.play();
-        break;
+        case 4:
+            monsterRoare1.play();
+            break;
     }
 
 }
 
-function GameOver()
-{
+function GameOver() {
     const gameOver = new Audio('audio/end.wav');
     gameOver.play();
-    
+    document.getElementById("gameView").classList.add("hidden");
+    document.getElementById("gameover").classList.remove("hidden");
+
 
 }
 
-function Win()
-{
-    if(keys === 4)
-    {
-        console.log("WIN")
+function Win() {
+    if (keys === 4) {
+        backsound.pause();
+        const win = new Audio('audio/win.mp3');
+        win.play();
+        document.getElementById("gameView").classList.add("hidden");
+        document.getElementById("WIN").classList.remove("hidden");
     }
-    else{
-        console.log(keys)
-    }
+
 }
 
 
