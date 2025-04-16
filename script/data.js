@@ -19,7 +19,9 @@ const map = [
     {
         block: 1.4,
         typ: 1,
-        doors: {1: 1.3}
+        doors: {1: 1.3},
+        object: 14,
+        objectLocation: 2
     },
 
     

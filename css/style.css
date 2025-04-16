@@ -5,11 +5,8 @@
     align-items: center;
     border: 5px;
     background-color: darkgray;
-    
-    
-
-
-
+    border-color: blanchedalmond;
+    padding: 5px;
 }
 
 main {
@@ -17,12 +14,21 @@ main {
     display: flex;
     justify-content: center;
     align-items: center;
-    padding: 200px;
+    padding: 20px;
 
+}
+body{
+  background-color: black;
 }
 
 header {
     background-color: gray;
+    text-align: center;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+
+    border: 15px;
+    border-color: brown;
+    border-style: calc();
 }
 
 #doorleft {
@@ -45,7 +51,6 @@ header {
     left: 345px;
     visibility:visible;
 }
-
 
 
 #arrowrightbutton{
@@ -111,9 +116,7 @@ header {
     position: absolute;
     top: 250px;
     left: 160px;
-    transform: rotateY(45deg);
-    
-    
+    transform: rotateY(45deg); 
   }
 
   .position2 {
@@ -132,24 +135,56 @@ header {
   }
   
   .hidden{
-    visibility: hidden;
+    display: none;
   }
 
   #object13{
     cursor: pointer;
   }
-  
+
+  #object14{
+    cursor: pointer;
+    top: 350px;
+    left: 356px;
+    width: 80px;
+  }
+
   #advicePop{
     position: absolute;
-    width: 760px;
-    left: -4px;
-    top: 0;
+    width: 730px;
+    left: 15px;
+    top: 15px;
     font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif ;
     justify-content: center;
     text-align: center;
     word-wrap: break-word;
-    
     background: grey; padding: 20px; border: 4px solid black;
     
   }
+
+
+
+  #start{
+    position: absolute;
+    background-color: gray;
+    width: 60px;
+    top: 400px;
+  }
+
+  #parchment{
+    position: absolute;
+    top: 70px;
+  }
+
+  #text{
+    position: absolute;
+    top: 100px;
+    font-family: Georgia, 'Times New Roman', Times, serif
+  }
+
+  #start{
+    
+  }
+
+
 
