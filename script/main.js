@@ -28,7 +28,7 @@ const monsterRoare2 = new Audio('audio/roar2.wav');
 
 const pickup = new Audio('audio/pickup.wav');
 backsound.loop = true;
-//backsound.play();
+backsound.play();
 
 
 window.onload = () => {
@@ -69,7 +69,7 @@ function Move(doorChosen) {
     MonsterDirect();
 
     if (monsterBlock.block === currentBlock.block) {
-        //GameOver();
+        GameOver();
     }
 
     console.log("D")
